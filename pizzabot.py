@@ -2,6 +2,7 @@
 import tweepy
 import pprint
 from secrets import *
+import time
 
 # Access and authorize our Twitter credentials from credentials.py
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -17,7 +18,7 @@ for i in search_results:
    print un
 #print [un, i.id]
    api.update_status(u'@'+un+u' '+u'\U0001F355'+u' yummy!',in_reply_to_status_id=i.id)
-   
+   time.sleep(1)
 #for i in search_results:
 #api.update_status(u'\U0001F355'+'qwe')
   # print i
